@@ -1,5 +1,5 @@
 // tslint:disable-next-line:no-reference
-///<reference path='./L.CanvasLayer.d.ts'/>
+///<reference path='./leaflet-canvas-layer.d.ts'/>
 
 /*
   1.0.1 (downloaded from https://github.com/Sumbera/gLayers.Leaflet/releases/tag/v1.0.1)

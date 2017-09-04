@@ -1,6 +1,6 @@
 {
   "name": "leaflet-canvas-layer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Show grid data in a map.",
   "main": "dist/leaflet-canvas-layer.js",
   "scripts": {
