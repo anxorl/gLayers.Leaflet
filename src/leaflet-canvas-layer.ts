@@ -9,16 +9,15 @@
   originally created and motivated by L.CanvasOverlay  available here: https://gist.github.com/Sumbera/11114288
 */
 
-import { Browser, DomUtil, LatLng, Layer, LayerOptions, LeafletEventHandlerFn, Map, ResizeEvent, Util, ZoomAnimEvent } from 'leaflet'
+import { Bounds, Browser, DomUtil, LatLng, LatLngBounds, Layer, LayerOptions, LeafletEventHandlerFn, Map as LMap, ResizeEvent, Util, ZoomAnimEvent } from 'leaflet'
 
-declare module 'leaflet' {
-    // tslint:disable:interface-name
-    // tslint:disable-next-line:no-shadowed-variable
-    interface Map {
-        _latLngBoundsToNewLayerBounds(ll: LatLngBounds, z: number, c: LatLng): Bounds
-
-    }
+// declare module 'leaflet' {
+// tslint:disable:interface-name
+// tslint:disable-next-line:no-shadowed-variable
+export interface Map extends LMap {
+    _latLngBoundsToNewLayerBounds(ll: LatLngBounds, z: number, c: LatLng): Bounds
 }
+// }
 
 export class CanvasLayer extends Layer {
     protected _canvas: HTMLCanvasElement
