@@ -1,5 +1,5 @@
 // tslint:disable-next-line:no-reference
-///<reference path='./leaflet-canvas-layer.d.ts'/>
+// <reference path='./leaflet-canvas-layer.d.ts'/>
 
 /*
   1.0.1 (downloaded from https://github.com/Sumbera/gLayers.Leaflet/releases/tag/v1.0.1)
@@ -10,6 +10,15 @@
 */
 
 import { Browser, DomUtil, LatLng, Layer, LayerOptions, LeafletEventHandlerFn, Map, ResizeEvent, Util, ZoomAnimEvent } from 'leaflet'
+
+declare module 'leaflet' {
+    // tslint:disable:interface-name
+    // tslint:disable-next-line:no-shadowed-variable
+    interface Map {
+        _latLngBoundsToNewLayerBounds(ll: LatLngBounds, z: number, c: LatLng): Bounds
+
+    }
+}
 
 export class CanvasLayer extends Layer {
     protected _canvas: HTMLCanvasElement
