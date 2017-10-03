@@ -23,5 +23,5 @@
     "watch": "webpack --watch"
   },
   "types": "dist/leaflet-canvas-layer.d.ts",
-  "version": "1.0.7"
+  "version": "1.0.8"
 }

@@ -39,6 +39,8 @@ export class CanvasLayer extends Layer {
         this._delegate = null
     }
 
+    public get map(): Map { return this._map }
+
     // -------------------------------------------------------------
     public getEvents() {
         const events: { [index: string]: LeafletEventHandlerFn } = {
