@@ -32,20 +32,23 @@ module.exports = {
   },
   target: 'web',
 
-  /*   externals: {
-      'leaflet': 'leaflet',
-      '../../node_modules/leaflet/dist/leaflet.css': 'leaflet/dist/leaflet.css'
-    }, */
+  externals: {
+    'leaflet': 'leaflet',
+    '../../node_modules/leaflet/dist/leaflet.css': 'leaflet/dist/leaflet.css'
+  },
 
   resolve: {
-    // you can now require('file') instead of require('file.js')
     extensions: ['.ts', '.js']
   },
+
   plugins: [
-    /*     new webpack.optimize.UglifyJsPlugin({
-          mangle: {
-            keep_fnames: true
-          }
-        }) */
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: {
+        keep_fnames: false
+      },
+      output: {
+        comments: false
+      }
+    })
   ]
 }

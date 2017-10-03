@@ -1,6 +1,3 @@
-// tslint:disable-next-line:no-reference
-// <reference path='./leaflet-canvas-layer.d.ts'/>
-
 /*
   1.0.1 (downloaded from https://github.com/Sumbera/gLayers.Leaflet/releases/tag/v1.0.1)
 
@@ -11,13 +8,10 @@
 
 import { Bounds, Browser, DomUtil, LatLng, LatLngBounds, Layer, LayerOptions, LeafletEventHandlerFn, Map as LMap, ResizeEvent, Util, ZoomAnimEvent } from 'leaflet'
 
-// declare module 'leaflet' {
 // tslint:disable:interface-name
-// tslint:disable-next-line:no-shadowed-variable
 export interface Map extends LMap {
     _latLngBoundsToNewLayerBounds(ll: LatLngBounds, z: number, c: LatLng): Bounds
 }
-// }
 
 export class CanvasLayer extends Layer {
     protected _canvas: HTMLCanvasElement
@@ -79,6 +73,7 @@ export class CanvasLayer extends Layer {
         return this
     }
 
+    // -------------------------------------------------------------
     public needRedraw() {
         if (!this._frame) {
             this._frame = Util.requestAnimFrame(this.drawLayer, this)
@@ -86,6 +81,7 @@ export class CanvasLayer extends Layer {
         return this
     }
 
+    // -------------------------------------------------------------
     public delegate(del: any) {
         this._delegate = del
         return this
@@ -96,6 +92,7 @@ export class CanvasLayer extends Layer {
         this._canvas.width = resizeEvent.newSize.x
         this._canvas.height = resizeEvent.newSize.y
     }
+
     // -------------------------------------------------------------
     private _onLayerDidMove() {
         const topLeft = this._map.containerPointToLayerPoint([0, 0])

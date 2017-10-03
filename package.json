@@ -1,16 +1,5 @@
 {
-  "name": "leaflet-canvas-layer",
-  "version": "1.0.4",
-  "description": "Show grid data in a map.",
-  "main": "dist/leaflet-canvas-layer.js",
-  "types": "dist/leaflet-canvas-layer.d.ts",
-  "scripts": {
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --watch"
-  },
-  "author": "AnxoRL",
-  "license": "MIT",
+  "author": "Anxorl",
   "dependencies": {
     "leaflet": "^1.2.0"
   },
@@ -23,5 +12,16 @@
     "tslint-loader": "^3.5.3",
     "typescript": "^2.4.2",
     "webpack": "^3.5.5"
-  }
+  },
+  "description": "Leaflet plugin for showing a canvas overlay in a leaflet map. This project is a fork and a typescript translation from https://github.com/Sumbera/gLayers.Leaflet",
+  "license": "MIT",
+  "main": "dist/leaflet-canvas-layer.js",
+  "name": "leaflet-canvas-layer",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch"
+  },
+  "types": "dist/leaflet-canvas-layer.d.ts",
+  "version": "1.0.6"
 }
