@@ -6,11 +6,21 @@
   originally created and motivated by L.CanvasOverlay  available here: https://gist.github.com/Sumbera/11114288
 */
 
-import { Bounds, Browser, DomUtil, LatLng, LatLngBounds, Layer, LayerOptions, LeafletEventHandlerFn, Map as LMap, ResizeEvent, Util, ZoomAnimEvent } from 'leaflet'
+import { Bounds, Browser, DomUtil, LatLng, LatLngBounds, Layer, LayerOptions, LeafletEventHandlerFn, Map as LMap, Point, ResizeEvent, Util, ZoomAnimEvent } from 'leaflet'
 
 // tslint:disable:interface-name
 export interface Map extends LMap {
     _latLngBoundsToNewLayerBounds(ll: LatLngBounds, z: number, c: LatLng): Bounds
+}
+
+export interface IViewInfo {
+    bounds: LatLngBounds
+    canvas: HTMLCanvasElement
+    center: LatLng
+    corner: { x: number, y: number }
+    layer: CanvasLayer
+    size: Point
+    zoom: number
 }
 
 export class CanvasLayer extends Layer {
